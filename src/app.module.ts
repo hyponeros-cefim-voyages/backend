@@ -8,6 +8,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 		ConfigModule.forRoot({
 			isGlobal: true, // Rend ConfigService accessible partout
 		}),
+		// Configuration de TypeORM avec ConfigService
 		TypeOrmModule.forRootAsync({
 			imports: [ConfigModule],
 			inject: [ConfigService],
