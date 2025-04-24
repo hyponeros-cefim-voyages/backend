@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
 import type { CreateTripDto } from "./dto/create-trip.dto";
 import type { UpdateTripDto } from "./dto/update-trip.dto";
-import type { TripService } from "./trip.service";
+import { TripService } from "./trip.service";
 
 @Controller("trip")
 export class TripController {

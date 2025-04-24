@@ -1,6 +1,8 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { ExpenseModule } from "./modules/expense/expense.module";
+import { TripModule } from "./modules/trip/trip.module";
 import { UserModule } from "./modules/user/user.module";
 
 @Module({
@@ -25,10 +27,10 @@ import { UserModule } from "./modules/user/user.module";
 			}),
 		}),
 		UserModule,
-		// TripModule,
+		TripModule,
 		// ParticipantModule,
 		// LinkModule,
-		// ExpenseModule,
+		ExpenseModule,
 		// CountryModule,
 		// ContactModule,
 		// ActivityModule,

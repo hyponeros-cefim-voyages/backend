@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
 import type { CreateExpenseDto } from "./dto/create-expense.dto";
 import type { UpdateExpenseDto } from "./dto/update-expense.dto";
-import type { ExpenseService } from "./expense.service";
+import { ExpenseService } from "./expense.service";
 
 @Controller("expense")
 export class ExpenseController {
