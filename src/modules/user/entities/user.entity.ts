@@ -11,14 +11,14 @@ export class User extends EntityStarter implements IUser {
 	isInvited: boolean;
 
 	@Column({ length: 72, nullable: true })
-	password: string;
+	password?: string;
 
 	@Column({ name: "last_name", length: 150, nullable: true })
-	lastName: string;
+	lastName?: string;
 
 	@Column({ name: "first_name", length: 150, nullable: true })
-	firstName: string;
+	firstName?: string;
 
 	@Column({ name: "registration_date", type: "timestamp", nullable: true })
-	registrationDate: Date;
+	registrationDate?: Date;
 }

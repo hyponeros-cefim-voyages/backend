@@ -8,13 +8,13 @@ export class Trip extends EntityStarter implements ITrip {
 	title: string;
 
 	@Column({ nullable: true })
-	description: string;
+	description?: string;
 
 	@Column({ name: "starts_at", nullable: true, type: "timestamp" })
-	startsAt: Date;
+	startsAt?: Date;
 
 	@Column({ name: "ends_at", nullable: true, type: "timestamp" })
-	endsAt: Date;
+	endsAt?: Date;
 
 	@Column({ name: "is_archived", type: "boolean", default: false })
 	isArchived: boolean;

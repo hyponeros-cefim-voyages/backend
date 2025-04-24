@@ -50,14 +50,14 @@ export interface ITripResponse extends ITrip {}
 /**
  * Partie éditable obligatoire de l'entité (ex : via PATCH)
  */
-export interface IdTripEditorMandatory extends Partial<IMandatoryPart> {}
+export interface ITripEditorMandatory extends Partial<IMandatoryPart> {}
 
 /**
  * Partie éditable optionnelle de l'entité
  */
-export interface IdTripEditorOptional extends Nullable<IOptionalPart> {}
+export interface ITripEditorOptional extends Nullable<IOptionalPart> {}
 
 /**
  * Structure complète pour éditer l'entité
  */
-export interface IdTripEditor extends IdTripEditorMandatory, IdTripEditorOptional {}
+export interface IdTripEditor extends ITripEditorMandatory, ITripEditorOptional {}
