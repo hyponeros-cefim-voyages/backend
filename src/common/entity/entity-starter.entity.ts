@@ -8,6 +8,6 @@ export abstract class EntityStarter implements IEntityStarter {
 	@CreateDateColumn({ name: "created_at", type: "timestamp" })
 	readonly createdAt: Date;
 
-	@UpdateDateColumn({ name: "updated_at", type: "timestamp" })
+	@UpdateDateColumn({ name: "updated_at", type: "timestamp", nullable: true })
 	updatedAt?: Date;
 }
