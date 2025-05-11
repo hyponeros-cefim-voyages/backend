@@ -12,6 +12,4 @@ export class Contact extends EntityStarter implements IContact {
 
 	@Column({ length: 254, nullable: true })
 	email?: string;
-
-	// TODO: Ajout relation vers Accommodation et Contact
 }

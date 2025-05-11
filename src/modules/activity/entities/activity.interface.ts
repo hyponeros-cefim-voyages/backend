@@ -1,7 +1,8 @@
 import { IEntityStarter } from "src/common/interfaces/entity-starter.interface";
 import { EmptyObject, Nullable } from "src/common/types/utilities.type";
+import { IContact } from "src/modules/contact/entities/contact.interface";
 import { IAddress } from "src/modules/submodules/address/address.interface";
-import { Country } from "src/modules/submodules/country/entities/country.entity";
+import { ICountry } from "src/modules/submodules/country/entities/country.interface";
 
 /**
  * Propriétés non modifiables après la création
@@ -23,8 +24,9 @@ interface IOptionalPart {
 	startsAt: Date;
 	endsAt: Date;
 	address: IAddress;
-	country: Country | null;
+	country: ICountry;
 	description: string;
+	contact: IContact[];
 }
 
 /**

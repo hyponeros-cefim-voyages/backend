@@ -1,7 +1,8 @@
 import { EntityStarter } from "src/common/entity/entity-starter.entity";
+import { Contact } from "src/modules/contact/entities/contact.entity";
 import { Address } from "src/modules/submodules/address/address.embeddable";
 import { Country } from "src/modules/submodules/country/entities/country.entity";
-import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
+import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne } from "typeorm";
 import { AccommodationType } from "./accommodation-type.enum";
 import { IAccommodation } from "./accommodation.interface";
 
@@ -34,6 +35,10 @@ export class Accommodation extends EntityStarter implements IAccommodation {
 	@ManyToOne(() => Country, { eager: true, nullable: true })
 	@JoinColumn({ name: "country_id" })
 	country?: Country;
+
+	@ManyToMany(() => Contact, { nullable: true, cascade: true })
+	@JoinTable({ name: "accommodation_contacts" })
+	contacts: Contact[];
 
 	// TODO: Ajoute relation  expense_id, trip_id, link_id
 }
