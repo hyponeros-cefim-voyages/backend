@@ -1,10 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { EntityStarter } from "src/common/entity/entity-starter.entity";
+import { Column, Entity } from "typeorm";
+import { ICountry } from "./country.interface";
 
 @Entity("country")
-export class Country {
-	@PrimaryGeneratedColumn()
-	id: number;
-
+export class Country extends EntityStarter implements ICountry {
 	@Column({ unique: true, length: 2 })
 	code: string; // ISO alpha-2 code, ex: 'FR'
 

@@ -1,11 +1,4 @@
-import { ICountry } from "../entities/country.interface";
-
-export class CountryDto implements ICountry {
-	id: number;
+export class CountryDto {
 	code: string;
 	name: string;
-
-	constructor(partial: Partial<CountryDto>) {
-		Object.assign(this, partial);
-	}
 }
