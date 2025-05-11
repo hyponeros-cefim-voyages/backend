@@ -1,8 +1,11 @@
 import { IEntityStarter } from "src/common/interfaces/entity-starter.interface";
 import { EmptyObject, Nullable } from "src/common/types/utilities.type";
 import { IContact } from "src/modules/contact/entities/contact.interface";
+import { IExpense } from "src/modules/expense/entities/expense.interface";
 import { IAddress } from "src/modules/submodules/address/address.interface";
 import { ICountry } from "src/modules/submodules/country/entities/country.interface";
+import { ILink } from "src/modules/submodules/link/entities/link.interface";
+import { ITrip } from "src/modules/trip/entities/trip.interface";
 
 /**
  * Propriétés non modifiables après la création
@@ -15,6 +18,8 @@ interface IFixedPart extends EmptyObject {}
 interface IMandatoryPart {
 	title: string;
 	price: number;
+	trip: ITrip;
+	expense: IExpense;
 }
 
 /**
@@ -26,7 +31,8 @@ interface IOptionalPart {
 	address: IAddress;
 	country: ICountry;
 	description: string;
-	contact: IContact[];
+	contacts: IContact[];
+	link: ILink;
 }
 
 /**

@@ -1,8 +1,10 @@
 import { IEntityStarter } from "src/common/interfaces/entity-starter.interface";
 import { EmptyObject, Nullable } from "src/common/types/utilities.type";
 import { IContact } from "src/modules/contact/entities/contact.interface";
+import { IExpense } from "src/modules/expense/entities/expense.interface";
 import { IAddress } from "src/modules/submodules/address/address.interface";
 import { Country } from "src/modules/submodules/country/entities/country.entity";
+import { ITrip } from "src/modules/trip/entities/trip.interface";
 import { AccommodationType } from "./accommodation-type.enum";
 
 /**
@@ -17,7 +19,8 @@ interface IMandatoryPart {
 	name: string;
 	price: number;
 	type: AccommodationType;
-	// TODO: expense_id, trip_id
+	trip: ITrip;
+	expense: IExpense;
 }
 
 /**

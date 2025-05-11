@@ -1,4 +1,6 @@
 import { EntityStarter } from "src/common/entity/entity-starter.entity";
+import { Accommodation } from "src/modules/accommodation/entities/accommodation.entity";
+import { Activity } from "src/modules/activity/entities/activity.entity";
 import { Participant } from "src/modules/submodules/participant/entities/participant.entity";
 import { Column, Entity, OneToMany } from "typeorm";
 import { ExpenseType } from "./expense-type.enum";
@@ -26,4 +28,16 @@ export class Expense extends EntityStarter implements IExpense {
 		(participant) => participant.expense,
 	)
 	participants: Participant[];
+
+	@OneToMany(
+		() => Activity,
+		(activity) => activity.expense,
+	)
+	activities: Activity[];
+
+	@OneToMany(
+		() => Accommodation,
+		(accommodation) => accommodation.expense,
+	)
+	accommodations: Accommodation[];
 }
