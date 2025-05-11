@@ -1,5 +1,6 @@
 import { EntityStarter } from "src/common/entity/entity-starter.entity";
-import { Column, Entity } from "typeorm";
+import { Participant } from "src/modules/submodules/participant/entities/participant.entity";
+import { Column, Entity, OneToMany } from "typeorm";
 import type { IUser } from "./user.interface";
 
 @Entity("user")
@@ -21,4 +22,10 @@ export class User extends EntityStarter implements IUser {
 
 	@Column({ name: "registration_date", type: "timestamp", nullable: true })
 	registrationDate?: Date;
+
+	@OneToMany(
+		() => Participant,
+		(participant) => participant.user,
+	)
+	participants: Participant[];
 }

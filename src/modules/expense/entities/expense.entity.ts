@@ -1,5 +1,6 @@
 import { EntityStarter } from "src/common/entity/entity-starter.entity";
-import { Column, Entity } from "typeorm";
+import { Participant } from "src/modules/submodules/participant/entities/participant.entity";
+import { Column, Entity, OneToMany } from "typeorm";
 import { ExpenseType } from "./expense-type.enum";
 import { IExpense } from "./expense.interface";
 
@@ -19,4 +20,10 @@ export class Expense extends EntityStarter implements IExpense {
 
 	@Column({ type: "text", nullable: true })
 	description?: string;
+
+	@OneToMany(
+		() => Participant,
+		(participant) => participant.expense,
+	)
+	participants: Participant[];
 }

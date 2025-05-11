@@ -7,6 +7,7 @@ import { ContactModule } from "./modules/contact/contact.module";
 import { ExpenseModule } from "./modules/expense/expense.module";
 import { CountryModule } from "./modules/submodules/country/country.module";
 import { LinkModule } from "./modules/submodules/link/link.module";
+import { ParticipantModule } from "./modules/submodules/participant/participant.module";
 import { TripModule } from "./modules/trip/trip.module";
 import { UserModule } from "./modules/user/user.module";
 
@@ -33,7 +34,7 @@ import { UserModule } from "./modules/user/user.module";
 		}),
 		UserModule,
 		TripModule,
-		// ParticipantModule,
+		ParticipantModule,
 		LinkModule,
 		ExpenseModule,
 		CountryModule,
