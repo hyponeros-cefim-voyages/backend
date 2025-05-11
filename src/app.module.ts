@@ -1,9 +1,11 @@
 import { Module, OnModuleInit } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { ContactModule } from "./modules/contact/contact.module";
 import { ExpenseModule } from "./modules/expense/expense.module";
 import { CountryModule } from "./modules/submodules/country/country.module";
 import { CountryService } from "./modules/submodules/country/country.service";
+import { LinkModule } from "./modules/submodules/link/link.module";
 import { TripModule } from "./modules/trip/trip.module";
 import { UserModule } from "./modules/user/user.module";
 
@@ -31,10 +33,10 @@ import { UserModule } from "./modules/user/user.module";
 		UserModule,
 		TripModule,
 		// ParticipantModule,
-		// LinkModule,
+		LinkModule,
 		ExpenseModule,
 		CountryModule,
-		// ContactModule,
+		ContactModule,
 		// ActivityModule,
 		// AccommodationModule,
 	],
