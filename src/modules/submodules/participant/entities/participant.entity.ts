@@ -11,7 +11,6 @@ export class Participant extends EntityStarter implements IParticipant {
 	@ManyToOne(
 		() => User,
 		(user) => user.participants,
-		{ eager: true },
 	)
 	@JoinColumn({ name: "user_id" })
 	user: User;
@@ -19,7 +18,6 @@ export class Participant extends EntityStarter implements IParticipant {
 	@ManyToOne(
 		() => Trip,
 		(trip) => trip.participants,
-		{ eager: true },
 	)
 	@JoinColumn({ name: "trip_id" })
 	trip: Trip;
@@ -27,7 +25,6 @@ export class Participant extends EntityStarter implements IParticipant {
 	@ManyToOne(
 		() => Expense,
 		(expense) => expense.participants,
-		{ eager: true },
 	)
 	@JoinColumn({ name: "expense_id" })
 	expense: Expense;
