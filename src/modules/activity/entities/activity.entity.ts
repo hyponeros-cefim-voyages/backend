@@ -2,6 +2,7 @@ import { EntityStarter } from "src/common/entity/entity-starter.entity";
 import { Contact } from "src/modules/contact/entities/contact.entity";
 import { Address } from "src/modules/submodules/address/address.embeddable";
 import { Country } from "src/modules/submodules/country/entities/country.entity";
+import { Link } from "src/modules/submodules/link/entities/link.entity";
 import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne } from "typeorm";
 import { IActivity } from "./activity.interface";
 
@@ -32,6 +33,14 @@ export class Activity extends EntityStarter implements IActivity {
 	@ManyToMany(() => Contact, { nullable: true, cascade: true })
 	@JoinTable({ name: "activity_contacts" })
 	contacts: Contact[];
+
+	@ManyToOne(() => Link, {
+		eager: true, // Récupère le lien associé à l'activité
+		nullable: true,
+		cascade: true, // Permet de créer un lien en même temps que l'activité
+	})
+	@JoinColumn({ name: "link_id" })
+	link?: Link;
 
 	// TODO: Ajoute relation  expense_id, trip_id, link_id
 }
