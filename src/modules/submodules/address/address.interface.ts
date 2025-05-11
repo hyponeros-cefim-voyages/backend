@@ -1,4 +1,5 @@
 import { EmptyObject, Nullable } from "src/common/types/utilities.type";
+import { ICountry } from "../country/entities/country.interface";
 /**
  * Propriétés non modifiables après création
  */
@@ -20,6 +21,7 @@ interface IMandatoryPart {
  */
 interface IOptionalPart {
 	streetLine2: string;
+	country: ICountry | null;
 }
 
 /**

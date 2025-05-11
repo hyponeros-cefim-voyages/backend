@@ -13,4 +13,6 @@ export class Address implements IAddress {
 
 	@Column({ length: 100 })
 	city: string;
+
+	//country n’est pas dans Address : la relation vers Country se fait au niveau de Activity (ou Accommodation) avec un @ManyToOne.
 }

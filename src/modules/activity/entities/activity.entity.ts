@@ -18,15 +18,15 @@ export class Activity extends EntityStarter implements IActivity {
 	@Column((type) => Address, { prefix: false })
 	address?: Address;
 
-	@ManyToOne(() => Country, { eager: true })
+	@ManyToOne(() => Country, { eager: true, nullable: true })
 	@JoinColumn({ name: "country_id" })
-	country: Country | null;
+	country?: Country;
 
 	@Column({ type: "text", nullable: true })
 	description?: string;
 
 	@Column({ type: "decimal", precision: 10, scale: 2, default: 0 })
 	price: number;
-}
 
-// TODO: Ajoute relation  expense_id, trip_id, link_id
+	// TODO: Ajoute relation  expense_id, trip_id, link_id
+}

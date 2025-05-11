@@ -1,6 +1,6 @@
 import { IEntityStarter } from "src/common/interfaces/entity-starter.interface";
 import { EmptyObject, Nullable } from "src/common/types/utilities.type";
-import { Address } from "src/modules/submodules/address/address.embeddable";
+import { IAddress } from "src/modules/submodules/address/address.interface";
 import { Country } from "src/modules/submodules/country/entities/country.entity";
 
 /**
@@ -22,7 +22,7 @@ interface IMandatoryPart {
 interface IOptionalPart {
 	startsAt: Date;
 	endsAt: Date;
-	address: Address;
+	address: IAddress;
 	country: Country | null;
 	description: string;
 }
