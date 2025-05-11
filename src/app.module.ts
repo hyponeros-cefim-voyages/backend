@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { AccommodationModule } from "./modules/accommodation/accommodation.module";
 import { ActivityModule } from "./modules/activity/activity.module";
 import { ContactModule } from "./modules/contact/contact.module";
 import { ExpenseModule } from "./modules/expense/expense.module";
@@ -38,7 +39,7 @@ import { UserModule } from "./modules/user/user.module";
 		CountryModule,
 		ContactModule,
 		ActivityModule,
-		// AccommodationModule,
+		AccommodationModule,
 	],
 	controllers: [],
 	providers: [],
