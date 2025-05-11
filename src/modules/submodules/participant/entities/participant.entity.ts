@@ -25,6 +25,7 @@ export class Participant extends EntityStarter implements IParticipant {
 	@ManyToOne(
 		() => Expense,
 		(expense) => expense.participants,
+		{ nullable: true }, // Nullable pour les participants sans dépense
 	)
 	@JoinColumn({ name: "expense_id" })
 	expense: Expense;
