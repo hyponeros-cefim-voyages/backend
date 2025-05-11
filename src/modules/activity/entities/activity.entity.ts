@@ -20,7 +20,7 @@ export class Activity extends EntityStarter implements IActivity {
 
 	@ManyToOne(() => Country, { eager: true })
 	@JoinColumn({ name: "country_id" })
-	country: Country;
+	country: Country | null;
 
 	@Column({ type: "text", nullable: true })
 	description?: string;
