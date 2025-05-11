@@ -1,7 +1,9 @@
-import { Module } from "@nestjs/common";
+import { Module, OnModuleInit } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { ExpenseModule } from "./modules/expense/expense.module";
+import { CountryModule } from "./modules/submodules/country/country.module";
+import { CountryService } from "./modules/submodules/country/country.service";
 import { TripModule } from "./modules/trip/trip.module";
 import { UserModule } from "./modules/user/user.module";
 
@@ -31,7 +33,7 @@ import { UserModule } from "./modules/user/user.module";
 		// ParticipantModule,
 		// LinkModule,
 		ExpenseModule,
-		// CountryModule,
+		CountryModule,
 		// ContactModule,
 		// ActivityModule,
 		// AccommodationModule,
@@ -39,4 +41,10 @@ import { UserModule } from "./modules/user/user.module";
 	controllers: [],
 	providers: [],
 })
-export class AppModule {}
+export class AppModule implements OnModuleInit {
+	constructor(private readonly countryService: CountryService) {}
+
+	async onModuleInit() {
+		await this.countryService.importAll();
+	}
+}
